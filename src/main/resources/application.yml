@@ -1,0 +1,14 @@
+
+ #TRACE < DEBUG < INFO < WARN < ERROR
+ # 로깅 레벨은 자신을 기준으로 상위 레벨을 출력함 ( 자신도 포함 )
+ # 예를들어 로깅 레벨은 "INFO"로 하였을 경우 "TRACE", "DEBUG" 레벨은 무시한다.
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/testdb
+
+logging:
+  level:
+    root : error # 시스템 전체적으로는 Error 이상만찍음
+    com.example.mongodb.demo: info # com.example.mongodb.demo 패키지에서는 info 이상 찍음 ( info, warn, error 가 찍힘 )
